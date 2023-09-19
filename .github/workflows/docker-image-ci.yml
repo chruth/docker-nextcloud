@@ -44,5 +44,5 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            ${GITHUB_REPOSITORY}:${{ env.NEXTCLOUD_VERSION }}
-            ${GITHUB_REPOSITORY}:${{ env.MAJOR_VERSION }}
+            ${{ github.repository }}:${{ env.NEXTCLOUD_VERSION }}
+            ${{ github.repository }}:${{ env.MAJOR_VERSION }}
