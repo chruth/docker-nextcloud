@@ -1,5 +1,8 @@
 FROM nextcloud:31.0.4-apache
 
+RUN usermod -u 1001 www-data; \
+    groupmod -g 1001 www-data
+
 RUN set -ex; \
     \
     apt-get update; \
@@ -49,8 +52,8 @@ RUN set -ex; \
 
 RUN mkdir -p \
     /var/log/supervisord \
-    /var/run/supervisord \
-;
+    /var/run/supervisord; \
+    chown -R www-data:www-data /var/log/supervisord /var/run/supervisord
 
 COPY supervisord.conf /
 
