@@ -1,4 +1,4 @@
-FROM nextcloud:31.0.9-apache
+FROM nextcloud:32.0.0-apache
 
 RUN usermod -u 1001 www-data; \
     groupmod -g 1001 www-data
